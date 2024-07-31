@@ -5,7 +5,9 @@
   "main": "app.js",
   "gypfile": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node-gyp build && node app.js",
+    "config": "node-gyp configure",
+    "build": "node-gyp build"
   },
   "dependencies": {
     "bindings": "^1.5.0",

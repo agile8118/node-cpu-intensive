@@ -18,3 +18,10 @@ Finally, we’ll execute it in JavaScript using multiple threads.
 - ./configure --enable-cxx --disable-shared
 - make
 - make check
+
+##### New Instructions:
+
+- ./gmp-setup.sh
+- npm install
+- npm run config
+- npm start
