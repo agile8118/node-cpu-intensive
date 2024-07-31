@@ -1,0 +1,14 @@
+{
+  "name": "node-cpu-intensive",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "gypfile": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^8.1.0"
+  }
+}
