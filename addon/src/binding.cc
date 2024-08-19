@@ -8,12 +8,7 @@ public:
 
   // This function is executed in a separate thread
   void Execute() override {
-    if (threads > 1) {
-      primes = generatePrimesThreads(threads, count, startingNumber, format, log);
-    }
-    else {
-      primes = generatePrimes(count, startingNumber, format, log);
-    }
+    primes = generatePrimesThreads(threads > 1 ? threads : 1, count, startingNumber, format, log);
   }
 
   void OnOK() override {
