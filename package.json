@@ -5,7 +5,7 @@
   "main": "app.js",
   "gypfile": true,
   "scripts": {
-    "start": "node-gyp build && node app.js",
+    "start": "node-gyp build && node src/app.js",
     "config": "node-gyp configure",
     "build": "node-gyp build"
   },

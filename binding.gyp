@@ -1,11 +1,12 @@
+# Use this config file if you managed to build GMP in the deps folder
 {
   "targets": [
     {
       "target_name": "heavy-lifter",
-      "sources": [ "native/binding.cc", "native/prime-generator.cc" ],
+      "sources": [ "./addon/src/binding.cc", "./addon/src/prime-generator.cc" ],
       "include_dirs": [
         "<!@(node -p \"require('node-addon-api').include\")",
-        "./deps/GMP"
+        "./addon/deps/GMP"
       ],
       "dependencies": ["<!(node -p \"require('node-addon-api').gyp\")"],
       "cflags!": [ "-fno-exceptions" ],
@@ -15,7 +16,7 @@
         "CLANG_CXX_LIBRARY": "libc++",
         "MACOSX_DEPLOYMENT_TARGET": "14.0",
         "OTHER_LDFLAGS": [
-          "-L./deps/GMP/.libs",
+          "-L./addon/deps/GMP/.libs",
           "-lgmp",
           "-lgmpxx"
         ]
@@ -24,7 +25,7 @@
         "VCCLCompilerTool": { "ExceptionHandling": 1 },
         "VCLinkerTool": {
           "AdditionalLibraryDirectories": [
-            "deps\\GMP\\.libs"
+            "addon\\deps\\GMP\\.libs"
           ],
           "AdditionalDependencies": ["gmp.lib", "gmpxx.lib"]
         }
@@ -32,12 +33,13 @@
       "conditions": [
         ["OS=='linux' or OS=='freebsd'", {
           "libraries": [
-            "-L./deps/GMP/.libs",
+            "-L./addon/deps/GMP/.libs",
             "-lgmp",
             "-lgmpxx"
           ]
         }]
-      ]
+      ],
+      "product_dir": "../build"
     }
   ]
 }

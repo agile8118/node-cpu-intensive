@@ -1,0 +1,19 @@
+============================================
+   GNU MP 6.3.0: tests/mpn/test-suite.log
+============================================
+
+# TOTAL: 53
+# PASS:  52
+# SKIP:  1
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+
+.. contents:: :depth: 2
+
+SKIP: t-addaddmul
+=================
+
+SKIP t-addaddmul (exit status: 77)
+
