@@ -1,4 +1,3 @@
-# Use this config file if you managed to build GMP in the deps folder
 {
   "targets": [
     {

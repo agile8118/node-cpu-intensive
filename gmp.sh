@@ -31,8 +31,19 @@ cd ${GMP_DIR}
 make
 make check
 
-echo "--------------------------------------"
-echo "GMP setup is complete."
-echo "Next, run: npm run config"
-echo "Then, start the app with: npm start"
-echo "--------------------------------------"
+if [ $? -eq 0 ]; then
+  echo "--------------------------------------"
+  echo "GMP setup is complete."
+  echo "Make sure to run npm install if you haven't already."
+  echo "Next, run: npm run config"
+  echo "Then, start the app with: npm start"
+  echo "--------------------------------------"
+else
+  echo "--------------------------------------"
+  echo "GMP setup failed during 'make check'."
+  echo "This may be due to missing build tools."
+  echo "If you are on Linux, try installing the necessary tools with the following command, and then try again:"
+  echo "sudo apt update && sudo apt install m4 cmake autoconf automake libtool build-essential"
+  echo "--------------------------------------"
+fi
+
